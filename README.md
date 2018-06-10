@@ -1,2 +1,2 @@
 # Mindera
-ChallengeB
+ChallengeB - Python3.6.4 

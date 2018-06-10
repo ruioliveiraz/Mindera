@@ -1,4 +1,4 @@
 Usage:
 
-python3 adjacentCells.py --filename path_to_input
+python3 adjacentCells.py --input path_to_input
 

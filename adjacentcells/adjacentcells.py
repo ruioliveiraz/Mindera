@@ -5,19 +5,19 @@ import os
 
 
 class adjacent_cells():
-    def __init__(self, filename):
-        self.values = self.read_matrix(filename)
+    def __init__(self, input):
+        self.values = self.read_matrix(input)
         self.grid_len_x = len(self.values[0])
         self.grid_len_y = len(self.values)
         self.groups_of_nodes = []
         self.visited_nodes = []
 
 
-    def read_matrix(self, filename):
+    def read_matrix(self, input):
         """
         Method that opens the file that contains the 2D Matrix of cells.
         """
-        with open(filename) as f:
+        with open(input) as f:
             values = json.load(f)
         cells = []
         for value in values:
@@ -79,9 +79,9 @@ if __name__ == "__main__":
     if args.input is None:
         print('Missing input filename')
     else:
-        filename = sys.argv[2]
-        if os.path.exists(filename):
-            ad = adjacent_cells(filename)
+        input = sys.argv[2]
+        if os.path.exists(input):
+            ad = adjacent_cells(input)
             ad.find_adjacent_cells()
         else:
             print('File does not exist!')

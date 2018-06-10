@@ -17,7 +17,7 @@ class adjacent_cells():
         """
         Method that opens the file that contains the 2D Matrix of cells.
         """
-        with open('input/5x8.json') as f:
+        with open(filename) as f:
             values = json.load(f)
         cells = []
         for value in values:

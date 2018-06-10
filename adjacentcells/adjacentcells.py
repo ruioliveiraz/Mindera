@@ -6,9 +6,9 @@ import os
 
 class adjacent_cells():
     def __init__(self, input):
-        self.values = self.read_matrix(input)
-        self.grid_len_x = len(self.values[0])
-        self.grid_len_y = len(self.values)
+        self.matrix = self.read_matrix(input)
+        self.grid_len_x = len(self.matrix[0])
+        self.grid_len_y = len(self.matrix)
         self.groups_of_nodes = []
         self.visited_nodes = []
 
@@ -18,11 +18,11 @@ class adjacent_cells():
         Method that opens the file that contains the 2D Matrix of cells.
         """
         with open(input) as f:
-            values = json.load(f)
-        cells = []
-        for value in values:
-            cells.append(value)
-        return cells
+            matrix = json.load(f)
+        matrix_ = []
+        for value in matrix:
+            matrix_.append(value)
+        return matrix_
 
 
     def find_adjacent_cells(self):
@@ -46,7 +46,7 @@ class adjacent_cells():
         :param y_coord: y coordinate of the cell (grid line)
         :param x_coord: x coordinate of the cell (grid column)
         """
-        if [y_coord, x_coord] not in self.visited_nodes and self.values[y_coord][x_coord]:
+        if [y_coord, x_coord] not in self.visited_nodes and self.matrix[y_coord][x_coord]:
             self.groups_of_nodes.append([y_coord, x_coord])  #list of adjacent cells
             self.visited_nodes.append([y_coord,x_coord])  #list of cells that have already been visited
 

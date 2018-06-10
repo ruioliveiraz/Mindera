@@ -6,14 +6,14 @@ import os
 
 class adjacent_cells():
     def __init__(self, filename):
-        self.values = self.open_file(filename)
+        self.values = self.read_matrix(filename)
         self.grid_len_x = len(self.values[0])
         self.grid_len_y = len(self.values)
         self.groups_of_nodes = []
         self.visited_nodes = []
 
 
-    def open_file(self, filename):
+    def read_matrix(self, filename):
         """
         Method that opens the file that contains the 2D Matrix of cells.
         """
